@@ -21,10 +21,7 @@ namespace App02
                 {
                     _Instance = new DBSV();
                 }
-                else
-                {
-                    return _Instance;
-                }                   
+                return _Instance;
             }
             private set { }
         }

@@ -47,7 +47,7 @@ namespace App02
             SV sv = new SV(txtMSSV.Text, txtName.Text, txtClass.Text, radioButtonMale.Checked, 
                 Convert.ToDateTime(dateTimePicker1.Text), Convert.ToDouble(txtDTB), 
                 checkBoxPhoto.Checked, checkBoxHocBa.Checked, checkBoxCMND.Checked);
-            qLSV.AddSV(sv);
+
             Close();
         }
     }

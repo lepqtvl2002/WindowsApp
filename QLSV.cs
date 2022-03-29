@@ -11,12 +11,6 @@ namespace App02
 {
     public class QLSV
     {
-        public List<SV> dsSV = new List<SV>();
-        public void AddSV(SV sv)
-        {
-            dsSV.Add(sv);
-        }
-
         public List<SV> GetAllSV()
         {
             List<SV> data = new List<SV>();
@@ -27,20 +21,26 @@ namespace App02
             return data;
         }
 
-        public SV GetSVByDataRow(int i)
+        public SV GetSVByDataRow(DataRow i)
         {
-            return new SV
+            SV sv = new SV(i["MSSV"].ToString(), i["NameSV"].ToString(), i["LopSH"].ToString(),
+                Convert.ToBoolean(i["Gender"].ToString()), Convert.ToDateTime(i["NgaySinh"].ToString()), 
+                Convert.ToDouble(i["DTB"].ToString()), Convert.ToBoolean(i["Photo"].ToString()),
+                Convert.ToBoolean(i["HocBa"].ToString()), Convert.ToBoolean(i["CMND"].ToString()));
+            return sv;
+            /*SV s1 = new SV
             {
                 MSSV = i["MSSV"].ToString(),
-                NameSV = i["Name"].ToString(),
+                NameSV = i["NameSV"].ToString(),
                 LopSH = i["LopSH"].ToString(),
                 Gender = Convert.ToBoolean(i["Gender"].ToString()),
                 NgaySinh = Convert.ToDateTime(i["NgaySinh"].ToString()),
+                DTB = Convert.ToDouble(i["DTB"].ToString()),
                 Photo = Convert.ToBoolean(i["Photo"].ToString()),
                 HocBa = Convert.ToBoolean(i["HocBa"].ToString()),
-                CMND = Convert.ToBoolean(i["CMND"].ToString()),
-                DTB = Convert.ToDouble(i["DTB"].ToString())
-            };
+                CMND = Convert.ToBoolean(i["CMND"].ToString())
+                
+            };*/
         }
         
         public List<SV> GetSVByLopSH(string LopSH)

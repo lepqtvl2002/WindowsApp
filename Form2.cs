@@ -13,16 +13,14 @@ namespace App02
     public partial class Form2 : Form
     {
         private QLSV qLSV = new QLSV();
-        public DBSV[] dBSV = new DBSV[20];
         public Form2()
         {
             InitializeComponent();
             comboBoxClassSH.Items.Add("All");
-            foreach (string i in qLSV.GetAllSV().Distinct())
+            foreach (string i in qLSV.GetAllLopSH().Distinct())
             {
                 comboBoxClassSH.Items.Add(i);
             }
-            dataGridView1.DataSource = dBSV[0].DTSV;
         }
 
         public void show_Text(string s)
